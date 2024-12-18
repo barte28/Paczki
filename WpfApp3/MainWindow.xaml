@@ -5,8 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp3"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+               Title="Nadaj Przesyłke" Height="450" Width="800">
+    <StackPanel>
+        <UniformGrid Columns="2">
+            <StackPanel>
+                <GroupBox Margin="25" Width="200" Padding="10" Header="Rodzaj przesyłek">
+                    <StackPanel>
+                        <RadioButton Margin="5" x:Name="postcard_RadioButton">Pocztówka</RadioButton>
+                        <RadioButton Margin="5" x:Name="letter_RadioButton" IsChecked="True">List</RadioButton>
+                        <RadioButton Margin="5" x:Name="box_RadioButton">Paczka</RadioButton>
+                    </StackPanel>
 
-    </Grid>
+                </GroupBox>
+                <Button Width="200" Click="Button_Click">Sprawdź cenę</Button>
+                <Image Source="../../../letter.png" Height="75" Width="150" Margin="10" x:Name="imagemodyfikowany_Image"></Image>
+                <TextBlock Width="75" x:Name="cena_TextBlock">Cena: 1,5zł</TextBlock>
+
+
+            </StackPanel>
+            <StackPanel>
+                <GroupBox Margin="25" Padding="15" Header="Dane adresowe">
+                    <StackPanel>
+                        <TextBlock Margin="5">Ulica z numerem</TextBlock>
+                        <TextBox Margin="5" x:Name="ulica_TextBox"></TextBox>
+                        <TextBlock Margin="5">Kod pocztowy</TextBlock>
+                        <TextBox Margin="5" x:Name="kodPocztowy_TextBOx"></TextBox>
+                        <TextBlock Margin="5">Miasto</TextBlock>
+                        <TextBox Margin="5" x:Name="miasto_TextBox"></TextBox>
+                    </StackPanel>
+                </GroupBox>
+            </StackPanel>
+        </UniformGrid>
+        <Button Margin="10" Width="300" Click="Button_Click_1">Zatwierdź</Button>
+    </StackPanel>
+
 </Window>
